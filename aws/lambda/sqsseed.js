@@ -1,11 +1,7 @@
 const AWS = require('aws-sdk');
+const config = require('./config')
 
-const REGION = 'sa-east-1';
-const AWS_ACCOUNT_ID = '999999999999';
-const QUEUE_NAME = 'queue-name';
-const QUEUE_URL = 'https://sqs.' + REGION + '.amazonaws.com/' + AWS_ACCOUNT_ID + '/' + QUEUE_NAME;
-
-const sqs = new AWS.SQS({ region : REGION });
+const sqs = new AWS.SQS({ region : config.region });
 
 exports.handler = function(event, context) {
   const params = {
