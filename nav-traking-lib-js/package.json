@@ -2,10 +2,15 @@
   "name": "nav-traking-lib",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
+    "webpack": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "André Alencar",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
 }
