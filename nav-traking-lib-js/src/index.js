@@ -1,1 +1,2 @@
-console.log("Working")
+window.NavTracking = require("./api")
+window.NavTracking.traking()
