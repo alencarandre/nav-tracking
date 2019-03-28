@@ -1,0 +1,20 @@
+
+<table>
+  <thead>
+    <tr>
+      <th>GUID</th>
+      <th>Location</th>
+      <th>Accessed at</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trackings.each do |tracking| %>
+      <tr>
+        <td><%= tracking.guid %></td>
+        <td><%= tracking.location %></td>
+        <td><%= l tracking.accessed_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
