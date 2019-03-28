@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_28_015704) do
+ActiveRecord::Schema.define(version: 2019_03_28_022444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
   enable_extension "plpgsql"
+
+  create_table "trackings", force: :cascade do |t|
+    t.citext "guid", null: false
+    t.citext "location", null: false
+    t.datetime "accessed_at", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["guid", "location", "accessed_at"], name: "index_trackings_on_guid_and_location_and_accessed_at", unique: true
+  end
 
 end
