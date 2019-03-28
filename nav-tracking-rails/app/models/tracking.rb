@@ -13,4 +13,6 @@
 class Tracking < ApplicationRecord
   validates :guid, :location, :accessed_at, presence: true
   validates :guid, uniqueness: { scope: [:location, :accessed_at] }
+
+  scope :order_accessed_at_desc, -> { order('accessed_at DESC') }
 end
