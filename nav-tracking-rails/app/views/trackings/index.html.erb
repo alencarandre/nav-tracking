@@ -1,20 +1,31 @@
+<div class="card">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <h3>Trackings</h3>
+    </div>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>GUID</th>
-      <th>Location</th>
-      <th>Accessed at</th>
-    </tr>
-  </thead>
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <table class="table table-responsive table-striped">
+        <thead>
+          <tr>
+            <th>GUID</th>
+            <th>Location</th>
+            <th>Accessed at</th>
+          </tr>
+        </thead>
 
-  <tbody>
-    <% @trackings.each do |tracking| %>
-      <tr>
-        <td><%= tracking.guid %></td>
-        <td><%= tracking.location %></td>
-        <td><%= l tracking.accessed_at %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tbody>
+          <% @trackings.each do |tracking| %>
+            <tr>
+              <td><%= tracking.guid %></td>
+              <td><%= tracking.location %></td>
+              <td><%= l tracking.accessed_at %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
