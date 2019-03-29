@@ -1,6 +1,6 @@
 @media all {
   body {
-    background: url(/assets/pattern.png) fixed;
+    background: url($nt-pattern-image) fixed;
     font-family: ABeeZee;
   }
 
@@ -14,19 +14,19 @@
     width: 100%;
     padding: 10px;
     z-index: 999;
-    background-color: #faf5b2;
-    box-shadow: 0px 5px 20px rgba(192, 192, 192, 0.75);
+    background-color: $nt-color-header;
+    box-shadow: 0px 8px 15px $nt-color-shadow;
   }
 
   nav {
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: $nt-color-nav-menu;
     position: fixed;
     z-index: 999;
     top: 80px;
     left: 0px;
     width: 15%;
     height: 100%;
-    box-shadow: 2px 0px rgba(192, 192, 192, 0.75);
+    box-shadow: 2px 0px $nt-color-shadow;
     padding: 10px;
 
     ul {
