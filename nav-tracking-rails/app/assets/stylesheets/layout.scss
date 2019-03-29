@@ -28,6 +28,16 @@
     height: 100%;
     box-shadow: 2px 0px rgba(192, 192, 192, 0.75);
     padding: 10px;
+
+    ul {
+      text-align: center;
+
+      li a {
+        font-size: 80px;
+        text-decoration: none;
+        color: white;
+      }
+    }
   }
 
   #content {
