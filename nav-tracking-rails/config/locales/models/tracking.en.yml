@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    models:
+      tracking:
+        one: "Tracking"
+        other: "Trackings"
+    attributes:
+      tracking:
+        guid: "GUID"
+        location: "Location"
+        accessed_at: "Accessed at"

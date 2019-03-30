@@ -1,7 +1,7 @@
 <div class="card">
   <div class="row">
     <div class="col-sm-12 col-md-12 col-lg-12">
-      <h3>Trackings</h3>
+      <h3><%= Tracking.model_name.human(count: 2) %></h3>
     </div>
   </div>
 
@@ -10,9 +10,9 @@
       <table class="table responsive table-striped">
         <thead>
           <tr>
-            <th>GUID</th>
-            <th>Location</th>
-            <th>Accessed at</th>
+            <th><%= Tracking.human_attribute_name('guid') %></th>
+            <th><%= Tracking.human_attribute_name('location') %></th>
+            <th><%= Tracking.human_attribute_name('accessed_at') %></th>
           </tr>
         </thead>
 
