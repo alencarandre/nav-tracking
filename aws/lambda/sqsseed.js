@@ -3,11 +3,11 @@ const config = require('./config')
 
 const sqs = new AWS.SQS({ region : config.region });
 
-const validEvent = function(event) {
+const validEvent = (event) => {
   return event.guid && event.location
 }
 
-const queueData = function(event) {
+const queueData = (event) => {
   return {
     guid: event.guid,
     location: event.location,
@@ -15,15 +15,15 @@ const queueData = function(event) {
   }
 }
 
-const queueParams = function(event, queueUrl) {
+const queueParams = (event, queueUrl) => {
   return {
     MessageBody: JSON.stringify(queueData(event)),
     QueueUrl: queueUrl
   }
 }
 
-const sendMessage = function(params, context) {
-  sqs.sendMessage(params, function(err, data) {
+const sendMessage = (params, context) => {
+  sqs.sendMessage(params, (err, data) => {
     if(err) {
       console.log('error:',"Fail Send Message" + err);
       context.done('error', "ERROR Put SQS");
@@ -34,9 +34,9 @@ const sendMessage = function(params, context) {
   });
 }
 
-exports.handler = function(event, context) {
+exports.handler = (event, context) => {
   if(validEvent(event)) {
-    sendMessage(queueParams(event, config.queue_url), context)
+    sendMessage(queueParams(event, config.queueUrl), context)
   } else {
     context.done('error', 'Invalid event')
   }
