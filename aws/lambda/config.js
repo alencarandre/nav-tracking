@@ -3,7 +3,7 @@ const AWS_ACCOUNT_ID = '999999999999';
 const QUEUE_NAME = 'queue-name';
 const QUEUE_URL = 'https://sqs.' + REGION + '.amazonaws.com/' + AWS_ACCOUNT_ID + '/' + QUEUE_NAME;
 
-module.exports {
+module.exports = {
   region: REGION,
-  queue_url: QUEUE_URL
+  queueUrl: QUEUE_URL
 }
