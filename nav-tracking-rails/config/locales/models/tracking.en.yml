@@ -5,7 +5,7 @@ en:
         one: "Tracking"
         other: "Trackings"
     attributes:
-      tenant:
+      tracking:
         guid: "GUID"
         location: "Location"
         accessed_at: "Accessed at"
