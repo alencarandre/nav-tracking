@@ -1,7 +1,7 @@
 <div class="card">
   <div class="row">
     <div class="col-sm-12 col-md-12 col-lg-12">
-      <h3>Trackings</h3>
+      <h3>Contacts</h3>
     </div>
   </div>
 
@@ -10,18 +10,16 @@
       <table class="table responsive table-striped">
         <thead>
           <tr>
-            <th>GUID</th>
-            <th>Location</th>
-            <th>Accessed at</th>
+            <th>Name</th>
+            <th>E-mail</th>
           </tr>
         </thead>
 
         <tbody>
-          <% @trackings.each do |tracking| %>
+          <% @contacts.each do |contact| %>
             <tr>
-              <td><%= tracking.guid %></td>
-              <td><%= tracking.location %></td>
-              <td><%= l tracking.accessed_at %></td>
+              <td><%= contact.name %></td>
+              <td><%= contact.email %></td>
             </tr>
           <% end %>
         </tbody>
