@@ -15,4 +15,10 @@ guids = (0..4).map { SecureRandom.uuid }
       location: Faker::Internet.url,
       accessed_at: i.minutes.ago
     ).first_or_create!
+
+  Contact
+    .where(
+      name: Faker::Name.name,
+      email: Faker::Internet.email
+    ).first_or_create!
 end
