@@ -1,0 +1,10 @@
+en:
+  activerecord:
+    models:
+      contact:
+        one: "Contact"
+        other: "Contacts"
+    attributes:
+      tenant:
+        name: "Name"
+        email: "Email"
