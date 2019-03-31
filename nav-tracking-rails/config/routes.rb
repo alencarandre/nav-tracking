@@ -4,5 +4,11 @@ Rails.application.routes.draw do
   resources :trackings, only: [:index]
   resources :contacts, only: [:index]
 
+  namespace :api do
+    namespace :v1 do
+      resources :contacts, only: [:create]
+    end
+  end
+
   root 'dashboard#index'
 end
