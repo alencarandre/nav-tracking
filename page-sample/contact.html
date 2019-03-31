@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div id="logo">
+      <a href="index.html"><img src="img/logo.png" /></a>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section>
+    <h1>Contact</h1>
+  </section>
+
+  <section>
+    <div class="row align-center">
+      <div class="col-md-12 col-sm-12">
+        <center>
+          <form id="contact">
+            <div class="row">
+              <div class="offset-md-3 col-md-6 col-sm-12">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" name="name" id="name" class="form-control" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="offset-md-3 col-md-6 col-sm-12">
+                <div class="form-group">
+                  <label for="name">E-mail</label>
+                  <input type="email" name="email" id="email" class="form-control" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="offset-md-3 col-md-6 col-sm-12">
+                <div class="form-group">
+                  <button id="submit" class="btn btn-success btn-lg">Send</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </center>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="float-left">
+      The sample page &copy; 2019 - All rights reserved
+    </div>
+
+    <div class="float-right">
+      By <a href="http://alencarandre.com.br">André Alencar</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+  <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/nav-tracking.js"></script>
+  <script type="text/javascript" src="js/contact.js"></script>
+</body>
+</html>
