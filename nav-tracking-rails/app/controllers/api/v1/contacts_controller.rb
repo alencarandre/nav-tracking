@@ -1,4 +1,8 @@
 class Api::V1::ContactsController < ApplicationController
+  protect_from_forgery prepend: true
+
+  respond_to :json
+
   def create
     contact = Contact
       .where(email: contact_params[:email])
@@ -7,7 +11,7 @@ class Api::V1::ContactsController < ApplicationController
     if contact.save
       render json: response_success(contact)
     else
-      render json: response_error(contact), status: 409
+      render json: response_error(contact), status: :conflict
     end
   end
 
