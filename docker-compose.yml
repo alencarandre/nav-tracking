@@ -1,0 +1,9 @@
+version: "2"
+
+services:
+  page-sample:
+    image: trinitronx/python-simplehttpserver
+    ports:
+      - "8000:8080"
+    volumes:
+      - "./page-sample:/var/www"
