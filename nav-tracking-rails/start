@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -e
+
+rm -f "./tmp/pids/server.pid"
+
+bundle install --without development test
+
+yarn install
+
+RAILS_ENV=$RAILS_ENV bundle exec rake assets:precompile --trace
+RAILS_ENV=$RAILS_ENV bundle exec rake webpacker:compile
+
+>&2 echo "Starting rails server"
+
+psql -U postgres --dbname=nav-tracking-rails_$RAILS_ENV -c "\q" || RAILS_ENV=$RAILS_ENV rake db:create db:schema:load
+
+RAILS_ENV=$RAILS_ENV bundle exec rake db:migrate
+bundle exec rails s -b 0.0.0.0 -p $PORT -e $RAILS_ENV

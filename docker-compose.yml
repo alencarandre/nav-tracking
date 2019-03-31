@@ -26,3 +26,18 @@ services:
       - "5432:5432"
     volumes:
       - './data/postgres:/app/nav-tracking/data/postgres'
+
+  rails:
+    build: ./nav-tracking-rails
+    restart: always
+    volumes:
+      - './nav-tracking-rails:/app/nav-tracking/nav-tracking-rails'
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      RAILS_ENV: production
+      RAILS_SERVE_STATIC_FILES: "true"
+      RAILS_MAX_THREADS: 5
+      PGPASSWORD: pgPas5VeryHard1
+      PGHOST: postgres
