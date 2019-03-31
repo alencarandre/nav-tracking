@@ -2,4 +2,4 @@
 :pidfile: tmp/pids/sidekiq.pid
 :queues:
   - sqs_fetch
-  - sqs_proccess
+  - tracking
