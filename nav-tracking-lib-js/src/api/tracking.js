@@ -7,18 +7,18 @@ const location = function() {
   return window.location.href
 }
 
-const trakingData = function(guid, location) {
+const trackingData = function(guid, location) {
   return { guid, location }
 }
 
-const sendTracking = function(path, trakingData) {
-  http.post(path, trakingData).then(function() { console.log("Tracked") })
+const sendTracking = function(path, trackingData) {
+  http.post(path, trackingData).then(function() { console.log("Tracked") })
 }
 
-const traking = function() {
+const tracking = function() {
   guidPromise()
-    .then(function(guid) { sendTracking('/tracking', trakingData(guid, location())) })
+    .then(function(guid) { sendTracking('/tracking', trackingData(guid, location())) })
     .catch(function() { console.log('Error on track URL') })
 }
 
-module.exports = traking
+module.exports = tracking
