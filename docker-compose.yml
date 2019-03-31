@@ -3,7 +3,15 @@ version: "2"
 services:
   page-sample:
     image: trinitronx/python-simplehttpserver
+    restart: always
     ports:
       - "8000:8080"
     volumes:
       - "./page-sample:/var/www"
+
+  redis:
+    image: redis:5.0.4
+    restart: always
+    command: ["redis-server", "--appendonly", "yes"]
+    ports:
+      - "6379:6379"
