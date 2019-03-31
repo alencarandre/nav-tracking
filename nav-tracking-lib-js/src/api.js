@@ -1,3 +1,3 @@
-const traking = require('./api/tracking')
+const tracking = require('./api/tracking')
 
-module.exports = { traking }
+module.exports = { tracking }

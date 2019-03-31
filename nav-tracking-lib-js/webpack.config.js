@@ -1,7 +1,7 @@
 module.exports = {
   entry: "./src/index.js",
   output: {
-    filename: "./nav-traking.js"
+    filename: "./nav-tracking.js"
   },
   devServer: {
     contentBase: './dist',

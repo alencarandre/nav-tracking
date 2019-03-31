@@ -1,2 +1,2 @@
 window.NavTracking = require("./api")
-window.NavTracking.traking()
+window.NavTracking.tracking()
