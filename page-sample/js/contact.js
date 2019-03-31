@@ -6,8 +6,6 @@
     const name = $('form#contact input#name').val();
     const email = $('form#contact input#email').val();
 
-    debugger
-
     navTracking
       .contact
       .submit(name, email)
