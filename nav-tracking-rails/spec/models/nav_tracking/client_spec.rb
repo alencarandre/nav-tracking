@@ -28,18 +28,14 @@ RSpec.describe NavTracking::Client, type: :model do
       expect(subject.get_trackings).to eq([
         {
           receipt_handle: 'tBj8gpGoBmLj4mVK1onpXSIu1kbDOYDyKBegKNJsmg==',
-          tracking: {
-            guid: 'GUID_1',
-            location: 'http://fake1.com',
-            accessed_at: 1553660394591
-          }
+          guid: 'GUID_1',
+          location: 'http://fake1.com',
+          accessed_at: 1553660394591
         }, {
           receipt_handle: 'KQETF4R8TcAa8Pc6BdKpvRj7yWjPH77kXrptiNYVMxA==',
-          tracking: {
-            guid: 'GUID_2',
-            location: 'http://fake2.com',
-            accessed_at: 1553961453210
-          }
+          guid: 'GUID_2',
+          location: 'http://fake2.com',
+          accessed_at: 1553961453210
         }
       ])
     end

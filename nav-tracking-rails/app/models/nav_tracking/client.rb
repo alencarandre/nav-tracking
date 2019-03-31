@@ -6,9 +6,13 @@ module NavTracking
       return [] if response['Messages'].blank?
 
       messages = response['Messages'].map do |message|
+        body = JSON.parse(message['Body'])
+
         {
           receipt_handle: message['ReceiptHandle'],
-          tracking: JSON.parse(message['Body']).symbolize_keys
+          guid: body['guid'],
+          location: body['location'],
+          accessed_at: body['accessed_at'],
         }
       end
     end
