@@ -1,7 +1,7 @@
 class SqsFetchMessageJob < ApplicationJob
-  queue_as :sqs_fetch
+  queue_as :default
 
-  def perform(*args)
+  def perform
     client.get_trackings.each do |message|
       Tracking.where(
         guid: message[:guid],
@@ -12,6 +12,8 @@ class SqsFetchMessageJob < ApplicationJob
       client.unqueue_tracking(message[:receipt_handle])
     end
   end
+
+  private
 
   def client
     @client ||= NavTracking::Client.new

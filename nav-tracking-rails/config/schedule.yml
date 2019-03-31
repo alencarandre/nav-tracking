@@ -1,4 +1,0 @@
-# sqs_fetch:
-#   cron: "*/1 * * * *"
-#   class: "ClassWorker"
-#   queue: sqs_fetch
