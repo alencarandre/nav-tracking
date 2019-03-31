@@ -15,3 +15,14 @@ services:
     command: ["redis-server", "--appendonly", "yes"]
     ports:
       - "6379:6379"
+
+  postgres:
+    image: postgres:10.7
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: pgPas5VeryHard1
+      PGDATA: "/app/nav-tracking/data/postgres"
+    ports:
+      - "5432:5432"
+    volumes:
+      - './data/postgres:/app/nav-tracking/data/postgres'
