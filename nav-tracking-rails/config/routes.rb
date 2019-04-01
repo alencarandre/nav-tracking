@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :trackings, only: [:index]
   resources :contacts, only: [:index]
+  resources :ping, only: [:index]
 
   namespace :api do
     namespace :v1 do
