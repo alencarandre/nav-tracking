@@ -30,8 +30,6 @@ services:
   rails:
     build: ./nav-tracking-rails
     restart: always
-    volumes:
-      - './nav-tracking-rails:/app/nav-tracking/nav-tracking-rails'
     ports:
       - "3000:3000"
     environment:
@@ -41,3 +39,19 @@ services:
       RAILS_MAX_THREADS: 5
       PGPASSWORD: pgPas5VeryHard1
       PGHOST: postgres
+      REDISHOST: redis://redis:6379/0
+    depends_on:
+      - postgres
+      - redis
+
+  sidekiq:
+    build: ./nav-tracking-rails
+    restart: always
+    command: bash bin/start-sidekiq
+    environment:
+      PGPASSWORD: pgPas5VeryHard1
+      PGHOST: postgres
+      REDISHOST: redis://redis:6379/0
+    depends_on:
+      - rails
+      - redis
