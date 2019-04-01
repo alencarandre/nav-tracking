@@ -112,3 +112,13 @@ Inside the directory `nav-tracking-rails`, on project path, execute commands bel
 ```bash
 rails s
 ```
+
+Now, you can access url `http://localhost:3000`
+
+
+### Page sample
+
+Inside the directory `page-sample`, on probject path, flow one instruction bellow
+
+- open file `index.html`
+- run `python -m SimpleHTTPServer` (need python installed on computer)
