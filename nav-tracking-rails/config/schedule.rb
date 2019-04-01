@@ -19,7 +19,11 @@
 
 # Learn more: http://github.com/javan/whenever
 
+set :environment, ENV['RAILS_ENV']
+set :output, {:error => "log/cron_error.log", :standard => "log/cron_log.log"}
+
+ENV.each { |k, v| env(k, v) }
 
 every 1.minute do
-  rake "navtracking:sqs_fetch"
+  rake "navtracking:fetch_sqs_messages"
 end

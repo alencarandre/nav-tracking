@@ -87,5 +87,6 @@ test:
 production:
   <<: *default
   database: nav-tracking-rails_production
-  username: nav-tracking-rails
-  password: <%= ENV['NAV-TRACKING-RAILS_DATABASE_PASSWORD'] %>
+  username: postgres
+  password: <%= ENV['PGPASSWORD'] %>
+  host: <%= ENV['PGHOST'] %>

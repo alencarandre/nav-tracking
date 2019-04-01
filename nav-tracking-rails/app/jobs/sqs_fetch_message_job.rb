@@ -6,7 +6,7 @@ class SqsFetchMessageJob < ApplicationJob
       Tracking.where(
         guid: message[:guid],
         location: message[:location],
-        accessed_at: Time.at(message[:accessed_at]).to_datetime
+        accessed_at: Time.at(message[:accessed_at] / 1000).to_datetime
       ).first_or_create!
 
       client.unqueue_tracking(message[:receipt_handle])

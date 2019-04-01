@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -e
+
+rm -f "./tmp/pids/sidekiq.pid"
+
+bundle install --without development test
+yarn install --check-files
+RAILS_ENV=production bundle exec rake assets:precompile
+RAILS_ENV=production bundle exec rake webpacker:compile
+
+until [ "$(curl -L -s "http://rails:3000/ping")" == "pong" ]; do
+  echo "Waiting for rails"
+  sleep 5
+done
+echo "Rails Started, Yep!!!"
+
+echo "Starting sidekiq"
+bundle exec sidekiq -e production
