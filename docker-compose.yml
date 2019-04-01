@@ -55,3 +55,16 @@ services:
     depends_on:
       - rails
       - redis
+
+  tasks:
+    build: ./nav-tracking-rails
+    restart: always
+    command: bash bin/start-tasks
+    environment:
+      PGPASSWORD: pgPas5VeryHard1
+      PGHOST: postgres
+      REDISHOST: redis://redis:6379/0
+    depends_on:
+      - rails
+      - sidekiq
+      - redis

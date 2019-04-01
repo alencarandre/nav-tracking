@@ -1,0 +1,22 @@
+#!/bin/bash
+
+set -e
+
+rm -f "/var/run/crond.pid"
+
+bundle install --without development test
+yarn install --check-files
+RAILS_ENV=production bundle exec rake assets:precompile
+RAILS_ENV=production bundle exec rake webpacker:compile
+
+until [ "$(curl -L -s "http://rails:3000/ping")" == "pong" ]; do
+  echo "Waiting for rails"
+  sleep 5
+done
+echo "Rails Started, Yep!!!"
+
+echo "Writing crontab"
+RAILS_ENV=production bundle exec whenever --update-crontab
+echo "Crontab wrote"
+
+cron && tail -F nothing
